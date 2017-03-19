@@ -1,0 +1,8 @@
+<h1><u><%= "Page #{@page.id}"%></u></h1>
+<h4> List For Organic links</h4>
+
+<ul>
+  <% @organics.each do |link| %>
+      <li><strong><%= raw link %></strong></li>
+  <% end %>
+</ul>

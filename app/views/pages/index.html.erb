@@ -1,0 +1,23 @@
+<h1><u>Page List</u></h1>
+
+<%= link_to 'New', new_page_path, class: 'blue-btn' %>
+<br>
+<br>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Links</th>
+  </tr>
+  <% @pages.each do |page| %>
+      <tr>
+        <td>Page <%= page.id %></td>
+        <td>
+          <%= link_to 'Organic', organic_page_path(page), class: 'green-btn' %>
+          <%= link_to 'PPC', ppc_page_path(page), class: 'green-btn' %>
+          <%= link_to 'Show', page_path(page), class: 'blue-btn' %>
+          <%= link_to 'Delete', page_path(page), method: :delete, data: {confirm: 'Are you sure?'}, class: 'red-btn' %>
+        </td>
+      </tr>
+  <% end %>
+</table>
